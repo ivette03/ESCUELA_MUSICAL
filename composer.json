@@ -1,0 +1,20 @@
+{
+    "name": "ivette/bienes_raices",
+    "description": "proyecto",
+    "autoload": {
+        "psr-4": {
+            "Model\\": "models/",
+            "MVC\\":"./",
+            "Controllers\\":"./controllers"
+        }
+    },
+    "authors": [
+        {
+            "name": "ivette03",
+            "email": "iacascante@est.istg.edu.ec"
+        }
+    ],
+    "require": {
+        "intervention/image": "*"
+    }
+}

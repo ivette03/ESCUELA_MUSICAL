@@ -1,0 +1,19 @@
+{
+  "name": "fronted_ventas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./public/src/assets/css/input.css -o ./public/src/dist/output.css",
+    "watch": "tailwindcss -i ./public/src/assets/css/input.css -o ./public/src/dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss-cli": "^11.0.0"
+  }
+}

@@ -9,6 +9,8 @@ $router=new Router();
 $router->get('/',[PaginasController::class,'index']);
 
 $router->get('/contactanos',[PaginasController::class,'contactanos']);
+
+$router->get('/cursos',[PaginasController::class,'cursos']);
 $router->comprobarRutas();
 
 ?>

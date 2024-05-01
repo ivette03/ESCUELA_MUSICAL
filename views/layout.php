@@ -40,8 +40,10 @@
       <!--nav BAR -->
       <nav class=" hidden nav-links flex  lg:flex justify-center items-center flex-col lg:justify-between lg:flex-row gap-x-10 p-5">
         <a class="pb-2 hover:text-gray-800 cursor-pointer ">Inicio</a>
+        <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Cursos</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Contactanos</a>
+        
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Cerrar Sesión</a>
       </nav>
     </div>
@@ -60,17 +62,18 @@
    <?php endif; ?>
   </header>
 
-  //variable $contenido
+  <!--variable $contenido-->
   <?php echo $contenido;?>
   
-
-  <footer class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
-    <nav class="nav-links flex  lg:flex justify-center items-center flex-col  lg:flex-row gap-x-10 p-5">
-      <a class="pb-2 hover:text-gray-700 cursor-pointer">Inicio</a>
-      <a class="pb-2 hover:text-gray-700 cursor-pointer">Cursos</a>
-      <a class="pb-2 hover:text-gray-700 cursor-pointer">Contactanos</a>
+  <footer class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white ">
+    <nav class="nav-links flex lg:flex justify-center items-center flex-col lg:flex-row gap-x-10 p-5">
+        <a class="pb-2 hover:text-gray-700 cursor-pointer">Inicio</a>
+        <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
+        <a class="pb-2 hover:text-gray-700 cursor-pointer">Cursos</a>
+        <a class="pb-2 hover:text-gray-700 cursor-pointer">Contactanos</a>
     </nav>
-    </footer5 <!--swiper js-->
+</footer>
+
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <!--scrollreveal-->
     <script src="../assets/js/scrollreveal.min.js"></script>

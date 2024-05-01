@@ -13,5 +13,11 @@ class PaginasController{
             
         ]);
     }
+    public static function cursos(Router $router){
+        $router->render('paginas/cursos',[
+
+        ]);
+    }
+
 }
 ?>

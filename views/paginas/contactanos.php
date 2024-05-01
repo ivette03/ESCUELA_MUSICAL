@@ -1,10 +1,10 @@
 <main class="flex justify-center items-center flex-col space-y-4">
-    <div>
-        <h2 class="text-2xl font-bold">Formulario de contacto</h2>
+    <div class="m-5">
+        <h2 class="text-2xl font-bold text-cyan-500">Formulario de contacto</h2>
     </div>
     <form class="max-w-md w-full">
         <fieldset class="border border-gray-300 p-4 rounded-md">
-            <legend class="text-lg font-bold">Información Personal</legend>
+            <legend class="text-lg font-bold text-cyan-500">Información Personal</legend>
             <label for="nombre" class="block mt-2">Nombre:</label>
             <input placeholder="Escriba su nombre" type="text" name="nombre" id="nombre" class="w-full border border-gray-300 rounded-md p-2 mt-1">
             <label for="apellido" class="block mt-2">Apellido:</label>
@@ -16,7 +16,7 @@
         </fieldset>
 
         <fieldset class="border border-gray-300 p-4 rounded-md">
-            <legend class="text-lg font-bold">Información sobre un curso</legend>
+            <legend class="text-lg font-bold text-cyan-500">Información sobre un curso</legend>
             <select id="opciones" class="w-full border border-gray-300 rounded-md p-2 mt-1">
                 <option value="" disabled selected>--Seleccione--</option>
                 <option value="canto">Canto</option>
@@ -27,7 +27,7 @@
 
 
         <fieldset class="border border-gray-300 p-4 rounded-md">
-            <legend class="text-lg font-bold">Información de medio de contacto</legend>
+            <legend class="text-lg font-bold text-cyan-500">Información de medio de contacto</legend>
             <p class="mt-2">Como desea ser contactado?</p>
             <div class="flex items-center mt-1">
                 <label for="contactar-telefono" class="mx-4">Teléfono</label>
@@ -41,6 +41,6 @@
             <label for="hora" class="block mt-2">Hora:</label>
             <input type="time" id="hora" min="09:00" max="18:00" class="w-full border border-gray-300 rounded-md p-2 mt-1">
         </fieldset>
-
+        <input type="submit" value="Enviar" class="text-white bg-cyan-500 rounded-md border-2 border-white w-full p-2 hover:bg-cyan-700 font-semibold">
     </form>
 </main>

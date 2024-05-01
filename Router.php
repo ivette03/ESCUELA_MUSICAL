@@ -14,6 +14,8 @@ class Router{
     $metodo=$_SERVER['REQUEST_METHOD'];
     if($metodo === 'GET'){
         $fn=$this->rutasGet[$urlActual] ?? null;
+    }else{
+      $fn=$this->rutasPost[$urlActual] ?? null;
     }
     if ($fn){
         call_user_func($fn,$this);

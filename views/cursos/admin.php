@@ -1,23 +1,57 @@
-<main class="flex justify-center align-center items-center flex-col">
-    <h2 class="text-center text-cyan-500 text-4xl font-semibold m-5">Cursos</h2>
-    <table  class=" p- w-1/2">
-        <thead class=" font-bold">
-            <tr class="bg-cyan-600 ">
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Hora_inicio</th>
-                <th>Hora_final</th>
+
+<main>
+    <h2 class="text-center m-5 text-cyan-600 font-bold text-2xl">Cursos</h2>
+<div class="relative overflow-x-auto sm:rounded-lg md:px-28">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+            <tr class="bg-cyan-600">
+                <th scope="col" class="px-6 py-3">
+                    Id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Nombre
+                </th>
+                <th scope="col" class="px-6 py-3 ">
+                    Descripción
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Hola Inicio
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Hola fin
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Opciones
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>id</td>
-                <td>nombre</td>
-                <td>descripcion</td>
-                <td>hora_inicio</td>
-                <td>hora_final</td>
-            </tr>
+        <?php foreach ($cursos as $curso) : ?>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <?php echo $curso->id; ?>
+                </th>
+                <td class="px-6 py-4">
+                <?php echo $curso->nombre; ?>
+                </td>
+                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+                <?php echo $curso->descripcion; ?>
+                </td>
+                <td class="px-6 py-4">
+                <?php echo $curso->hora_inicio; ?>
+                </td>
+                <td class="px-6 py-4">
+                <?php echo $curso->hora_fin; ?>
+                </td>
+                <td class="px-6 py-4">
+                <input value="Elimnar" class="bg-red-600 rounded-sm text-white text-center p-2">
+                <input value="Actualizar" class="bg-cyan-600 rounded-sm text-white text-center p-2">
+                </td>
+            </tr>   
+            <?php endforeach; ?>
         </tbody>
     </table>
+</div>
+
+
 </main>

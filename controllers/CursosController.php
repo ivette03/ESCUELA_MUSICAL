@@ -13,9 +13,20 @@ class CursosController{
 
         ]);
     }
+    public static function eliminar(Router $router){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $id=$_POST['id'];
+            $id=filter_var($id,FILTER_VALIDATE_INT);
+            if($id){
+                $tipo=$_POST['tipo'];
+                if(tipoContenido($tipo)){
+                    $curso=Curso::find($id);
+                    $curso->eliminar();
+                }
+            }
+        }
 
-
-
+    }
     public static function crear(Router $router){
         $curso=new Curso;
         $errores=$curso->getErrores();
@@ -43,7 +54,6 @@ class CursosController{
                 if(!is_dir(CARPETA_IMAGENES)){
                   mkdir(CARPETA_IMAGENES);
                 }
-               
                 $curso->guardar();
             }    
         }

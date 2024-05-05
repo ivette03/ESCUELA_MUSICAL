@@ -60,6 +60,14 @@ class ActiveRecord{
             exit;
         }
     }
+    public function eliminar(){
+        $query="DELETE FROM " . static::$tabla . " where id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+        $resultado=self::$db->query($query);
+        if($resultado){
+            $this->borrarImagen();
+            header("Location:/admin?resultado=3");
+        }
+    }
       //subida de archivos
       public function setImagen($imagen)
       {
@@ -101,6 +109,11 @@ class ActiveRecord{
     return $array;
    }
 
+   public static function find($id){
+    $query="SELECT * FROM " . static::$tabla . " WHERE id=${id}";
+    $resultado=self::consultarSql($query);
+    return array_shift($resultado);
+}   
     public static function crearObjeto($registro){
         $objeto=new static;
         foreach($registro as $key=>$value){
@@ -109,6 +122,12 @@ class ActiveRecord{
             }
         }
         return $objeto;
+    }
+    public function eliminarImagen(){
+        $rutaImagenAnterior=CARPETA_IMAGENES . $this->imagen;
+        if(file_exists($rutaImagenAnterior)){
+            unlink($rutaImagenAnterior);
+        }
     }
 }
 ?>

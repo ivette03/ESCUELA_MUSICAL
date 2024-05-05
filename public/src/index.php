@@ -15,6 +15,7 @@ $router->get('/cursos',[PaginasController::class,'cursos']);
 
 $router->get('/cursos/crear',[CursosController::class,'crear']);
 $router->post('/cursos/crear',[CursosController::class,'crear']);
+$router->post('/cursos/eliminar',[CursosController::class,'eliminar']);
 $router->get('/admin',[CursosController::class,'index']);
 
 $router->comprobarRutas();

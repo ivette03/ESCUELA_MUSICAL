@@ -17,6 +17,11 @@ function mostrarNotificacion($codigo){
     }
     return $mensaje;
 }
+function tipoContenido($tipo){
+    $tipos=['curso','profesor'];
+    return in_array($tipo,$tipos);
+
+}
 function debuguear($data){
     echo "<pre>";
      var_dump($data);

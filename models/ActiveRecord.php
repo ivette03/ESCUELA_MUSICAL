@@ -55,8 +55,34 @@ class ActiveRecord{
         $query.= "VALUES ('";
         $query.= implode("', '", array_values($atributos))."')";
         $resultado = self::$db->query($query);
+        if($resultado){
+            header('location:/admin?resultado=1');
+            exit;
+        }
     }
-
+      //subida de archivos
+      public function setImagen($imagen)
+      {
+          //asignar al atributo imagen el nombre d ela imagen
+          if(isset($this->id)){
+              //comprobar si existe el archivo
+              if ($this->imagen) {
+                 $this->borrarImagen();
+              }
+          }
+          
+          // Asignar la nueva imagen
+          $this->imagen = $imagen;
+      }
+      //eliminando imagen
+      public function borrarImagen(){
+          $rutaImagenAnterior = CARPETA_IMAGENES . $this->imagen;
+          if (file_exists($rutaImagenAnterior)) {
+              unlink($rutaImagenAnterior);
+          }
+  
+      }   
+  
     public static function all(){
         $query="SELECT * FROM curso";
         $resultado=self::consultarSQL($query);

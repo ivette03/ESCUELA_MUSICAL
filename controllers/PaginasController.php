@@ -1,11 +1,15 @@
 <?php
 namespace Controllers;
+
+use Model\Curso;
 use MVC\Router;
 class PaginasController{
     public static  function index(Router $router){
         $inicio=true;
+        $cursos=Curso::all();
         $router->render('paginas/index',[
-            'inicio'=>$inicio
+            'inicio'=>$inicio,
+            'cursos'=>$cursos
         ]);    
     }
     public static function contactanos(Router $router){
@@ -14,7 +18,9 @@ class PaginasController{
         ]);
     }
     public static function cursos(Router $router){
+        $cursos=Curso::all();
         $router->render('paginas/cursos',[
+            'cursos'=>$cursos
 
         ]);
     }

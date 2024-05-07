@@ -7,7 +7,7 @@
     </div>
     <section>
         <?php 
-         include "listado.php";
+         include "listado_cursos.php";
         ?>
     </section>
     <section>

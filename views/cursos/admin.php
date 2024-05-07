@@ -29,10 +29,10 @@
                         Descripción
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Hola Inicio
+                        Hora Inicio
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Hola fin
+                        Hora fin
                     </th>
                     
                     <th scope="col" class="px-6 py-3">
@@ -47,7 +47,7 @@
                             <?php echo $curso->id; ?>
                         </th>
                         <td class="px-2 py-2">
-                            <img src="../../imagenes/<?php echo $curso->imagen; ?>" width="100px" height="auto">
+                            <img src="../../imagenes/<?php echo $curso->imagen; ?>" width="100px" height="auto"  loading="lazy">
                         </td>
                         <td class="px-2 py-2">
                             <?php echo $curso->nombre; ?>
@@ -69,9 +69,7 @@
                                     <input type="hidden" name="tipo" value="curso">
                                     <input type="submit" class="bg-red-600 rounded-sm text-white text-center p-2 cursor-pointer w-full" value="Eliminar">
                                 </form>
-                                <form>
-                                    <input type="submit" value="Actualizar" class="bg-cyan-600 rounded-sm text-white text-center p-2 w-full cursor-pointer">
-                                </form>
+                               <a href="/cursos/actualizar?id=<?php echo $curso->id;?>" class="bg-cyan-600 text-white p-2">Actualizar</a>
                             </div>
 
                     </tr>

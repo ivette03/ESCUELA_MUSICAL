@@ -62,6 +62,37 @@ class CursosController{
             'errores'=>$errores
         ]);
     }
+    public static function actualizar(Router $router){
+        
+        $errores=Curso::getErrores();
+        $id=validadOredireccionar('/admin');
+        $curso=Curso::find($id);
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $args=$_POST['curso'];
+            $curso->sincronizar($args);
+            $errores=$curso->validar();
+            if(empty($errores)){
+                if($_FILES['curso']['name']['imagen']){
+                    $imagen=$_FILES['curso']['tmp_name']['imagen'];
+                    if(!is_dir(CARPETA_IMAGENES)){
+                        mkdir(CARPETA_IMAGENES);
+                    }
+                    $nombreImagen=md5(uniqid(rand(), true)) . "jpg";
+                    $rutaImagen=CARPETA_IMAGENES . $nombreImagen;
+                    move_uploaded_file($imagen, $rutaImagen);
+                    $curso->setImagen($nombreImagen);
+                }
+                
+                $curso->guardar();
+            }
+
+        }
+        $router->render('cursos/actualizar',[
+            'errores'=>$errores,
+            'curso'=>$curso
+
+        ]);
+    }
     
 }
 

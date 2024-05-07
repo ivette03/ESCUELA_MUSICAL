@@ -17,7 +17,7 @@ class ActiveRecord{
     public static function setDB($database){
         self::$db = $database;
     }
-    public function getErrores(){
+    public static function getErrores(){
         return static::$errores;
     }
     public function validar(){
@@ -25,9 +25,12 @@ class ActiveRecord{
         return static::$errores;
     }
     public function guardar(){
-        if(is_null($this->id)){
+        if(!is_null($this->id)){
+            $this->actualizar();    
+        }else{
             $this->crear();
-        }   
+        }
+
     }
     public function atributos(){
         $atributos=[];
@@ -68,12 +71,10 @@ class ActiveRecord{
             header("Location:/admin?resultado=3");
         }
     }
-      //subida de archivos
+     
       public function setImagen($imagen)
       {
-          //asignar al atributo imagen el nombre d ela imagen
           if(isset($this->id)){
-              //comprobar si existe el archivo
               if ($this->imagen) {
                  $this->borrarImagen();
               }
@@ -108,12 +109,11 @@ class ActiveRecord{
     //retornar los resultados
     return $array;
    }
-
    public static function find($id){
     $query="SELECT * FROM " . static::$tabla . " WHERE id=${id}";
     $resultado=self::consultarSql($query);
     return array_shift($resultado);
-}   
+    }   
     public static function crearObjeto($registro){
         $objeto=new static;
         foreach($registro as $key=>$value){
@@ -128,6 +128,33 @@ class ActiveRecord{
         if(file_exists($rutaImagenAnterior)){
             unlink($rutaImagenAnterior);
         }
+    }
+
+    public function actualizar(){
+        $atributos=$this->sanitizarAtributos();
+        $valores=[];
+        foreach($atributos as $key=>$value){
+            $valores[]="{$key}='{$value}'";
+        }
+        $query="UPDATE ". static::$tabla . " SET "; // corrected
+        $query.= implode(", ", $valores); // corrected
+        $query.= " WHERE ID = '". self::$db->escape_string($this->id) ."'"; // corrected
+        $query.= " LIMIT 1 ";
+        $resultado=self::$db->query($query);
+        if($resultado){
+            header('Location:/admin?resultado=2');
+            exit;
+        }
+        echo $query;
+    }
+    
+    public function sincronizar($args=[]){
+        foreach($args as $key=>$value){
+            if(property_exists($this,$key) && !is_null($value)){
+                $this->$key=$value;
+            }
+        }
+        
     }
 }
 ?>

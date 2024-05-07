@@ -33,7 +33,7 @@ class Curso extends ActiveRecord{
         if(!$this->hora_fin){
             self::$errores[]='La hora final es obligatoria';
         }
-        if(empty($_FILES['curso']['tmp_name']['imagen']) || $_FILES['curso']['error']['imagen'] !== UPLOAD_ERR_OK){
+        if(!$this->imagen && empty($_FILES['curso']['tmp_name']['imagen'])) {
             self::$errores[]='La imagen es obligatoria';
         }
         

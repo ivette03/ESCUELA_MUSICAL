@@ -2,14 +2,18 @@
 namespace Controllers;
 use MVC\Router;
 use Model\Curso;
+use Model\Profesor;
+
 class CursosController{
     public static function index(Router $router){
         $cursos=Curso::all();
+        $profesores=Profesor::all();
         $resultado=null;
         $resultado=$_GET['resultado'] ?? '';
         $router->render('cursos/admin',[
             'cursos'=>$cursos,
-            'resultado'=>$resultado
+            'resultado'=>$resultado,
+            'profesores'=>$profesores,
 
         ]);
     }

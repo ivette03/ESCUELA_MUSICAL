@@ -9,6 +9,7 @@ class Curso extends ActiveRecord{
     public $hora_inicio;
     public $hora_fin;
     public $imagen;
+   
 
     
     public function __construct($args=[]){
@@ -33,7 +34,7 @@ class Curso extends ActiveRecord{
         if(!$this->hora_fin){
             self::$errores[]='La hora final es obligatoria';
         }
-        if(!$this->imagen && empty($_FILES['curso']['tmp_name']['imagen'])) {
+        if(!$this->imagen) {
             self::$errores[]='La imagen es obligatoria';
         }
         

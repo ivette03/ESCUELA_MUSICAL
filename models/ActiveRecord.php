@@ -92,11 +92,12 @@ class ActiveRecord{
   
       }   
   
-    public static function all(){
-        $query="SELECT * FROM curso";
-        $resultado=self::consultarSQL($query);
+      public static function all(){
+        $query = "SELECT * FROM " . static::$tabla;
+        $resultado = self::consultarSQL($query);
         return $resultado;
     }
+    
 
    public static function consultarSQL($query){
     $resultado=self::$db->query($query);

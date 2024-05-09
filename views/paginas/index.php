@@ -12,7 +12,7 @@
     </section>
     <section>
         <?php
-         include "profesores.php";
+         include "listado_profesores.php";
         ?>
     </section>
 </main>

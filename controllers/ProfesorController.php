@@ -17,6 +17,20 @@ class ProfesorController{
 
         ]);
     }
+    public static function eliminar(Router $router){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $id=$_POST['id'];
+            $id=filter_var($id,FILTER_VALIDATE_INT);
+            if($id){
+                $tipo=$_POST['tipo'];
+                if(tipoContenido($tipo)){
+                    $profesor=Profesor::find($id);
+                    $profesor->eliminar();
+                }
+            }
+        }
+
+    }
     public static function crear(Router $router){
         $cursos=Curso::all();
         $profesor=new Profesor;

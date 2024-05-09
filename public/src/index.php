@@ -23,7 +23,7 @@ $router->post('/cursos/eliminar',[CursosController::class,'eliminar']);
 
 $router->get('/profesor/crear',[ProfesorController::class,'crear']);
 $router->post('/profesor/crear',[ProfesorController::class,'crear']);
-
+$router->post('/profesor/eliminar',[ProfesorController::class,'eliminar']);
 
 
 

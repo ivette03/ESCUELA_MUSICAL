@@ -65,7 +65,7 @@
   <!--variable $contenido-->
   <?php echo $contenido;?>
   
-  <footer class="bg-gradient-to-r from-cyan-700 to-blue-500  text-white  fixed bottom-0 left-0 w-full">
+  <footer class="bg-gradient-to-r from-cyan-700 to-blue-500  text-white  w-full">
     <nav class="nav-links flex lg:flex justify-center items-center flex-col lg:flex-row gap-x-10 p-5">
         <a class="pb-2 hover:text-gray-700 cursor-pointer" href="/">Inicio</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>

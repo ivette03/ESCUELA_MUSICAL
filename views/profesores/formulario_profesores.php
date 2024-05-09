@@ -5,16 +5,13 @@
     </div>
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="apellidos">Apellidos:</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apellido" name="profesor[apellido]" placeholder="Ingrese apellidos" ></textarea>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apellido" name="profesor[apellido]" placeholder="Ingrese apellidos" >
     </div>
  
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">Descripción:</label>
         <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" name="profesor[descripcion]" placeholder="Ingrese descripción" ></textarea>
     </div>
-
-    
-
 
     </div>
     <div class="mb-6">

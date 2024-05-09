@@ -1,3 +1,5 @@
 <?php
-include 'listado_cursos.php';
+
+
+include '../../includes/listado_cursos.php';
 ?>

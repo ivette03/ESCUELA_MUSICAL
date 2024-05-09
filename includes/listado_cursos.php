@@ -1,3 +1,4 @@
+
 <main>
   <!-- Curso 1 -->
   <h2 class="text-4xl font-semibold text-center m-5 text-cyan-500">Nuestros cursos</h2>

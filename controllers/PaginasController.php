@@ -8,7 +8,12 @@ class PaginasController{
     public static  function index(Router $router){
         $inicio=true;
         $cursos=Curso::all();
-        $profesores=Profesor::all();
+        $profesores=Profesor::get(3);
+         // Si no estás en la página "cursos.php", obtén solo los primeros tres cursos
+        if ($_SERVER['SCRIPT_NAME'] !== '/cursos.php') {
+           $cursos = Curso::get(3);
+        }
+        
         $router->render('paginas/index',[
             'inicio'=>$inicio,
             'cursos'=>$cursos,

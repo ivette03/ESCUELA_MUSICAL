@@ -7,12 +7,12 @@
     </div>
     <section>
         <?php 
-         include "listado_cursos.php";
+         include "../../includes/listado_cursos.php";
         ?>
     </section>
     <section>
         <?php
-         include "listado_profesores.php";
+         include "../../includes/listado_profesores.php";
         ?>
     </section>
 </main>

@@ -72,6 +72,36 @@ class ProfesorController{
         ]);
 
     }
+    public static function actualizar(Router $router){
+        $errores=Profesor::getErrores();
+        $id=validadOredireccionar('/admin');
+        $profesor=Profesor::find($id);
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $args=$_POST['profesor'];
+            $profesor->sincronizar($args);
+            $errores=$profesor->validar();
+            if(empty($errores)){
+                if($_FILES['profesor']['name']['imagen']){
+                    $imagen=$_FILES['profesor']['tmp_name']['imagen'];
+                    if(!is_dir(CARPETA_IMAGENES)){
+                        mkdir(CARPETA_IMAGENES);
+                    }
+                    $nombreImagen=md5(uniqid(rand(), true)) . "jpg";
+                    $rutaImagen=CARPETA_IMAGENES . $nombreImagen;
+                    move_uploaded_file($imagen, $rutaImagen);
+                    $profesor->setImagen($nombreImagen);
+                }
+                $profesor->guardar();
+            }
+        }
+
+
+        $router->render('profesores/actualizar',[
+            'errores'=>$errores,
+            'profesor'=>$profesor
+           
+        ]);
+    }
 
 }
 

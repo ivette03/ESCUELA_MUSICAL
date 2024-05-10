@@ -22,6 +22,8 @@ $router->post('/cursos/actualizar',[CursosController::class,'actualizar']);
 $router->post('/cursos/eliminar',[CursosController::class,'eliminar']);
 
 $router->get('/profesor/crear',[ProfesorController::class,'crear']);
+$router->get('/profesor/actualizar',[ProfesorController::class,'actualizar']);
+$router->post('/profesor/actualizar',[ProfesorController::class,'actualizar']);
 $router->post('/profesor/crear',[ProfesorController::class,'crear']);
 $router->post('/profesor/eliminar',[ProfesorController::class,'eliminar']);
 

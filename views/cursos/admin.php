@@ -134,7 +134,7 @@
                                     <input type="hidden" name="tipo" value="profesor">
                                     <input type="submit" class="bg-red-600 rounded-sm text-white text-center p-2 cursor-pointer w-full" value="Eliminar">
                                 </form>
-                               <a href="/profesores/actualizar?id=<?php echo $profesor->id;?>" class="bg-cyan-600 text-white p-2">Actualizar</a>
+                               <a href="/profesor/actualizar?id=<?php echo $profesor->id;?>" class="bg-cyan-600 text-white p-2">Actualizar</a>
                             </div>
                         </td>
 

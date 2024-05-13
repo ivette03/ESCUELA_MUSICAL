@@ -1,6 +1,28 @@
 
 const navLinks=document.querySelector('.nav-links');
 const menuButton=document.querySelector('#menu-button');
+const metodoContacto=document.querySelectorAll('input[name="contacto[contacto]"]');
+metodoContacto.forEach(input=>input.addEventListener('click',mostrarMetodosContacto));
+
+function mostrarMetodosContacto(e){
+    const contactoDiv=document.querySelector('#contacto');
+    if(e.target.value === 'telefono'){
+        contactoDiv.innerHTML=`
+        <p>Por favor introduzca la fecha y hora que desee ser contactado</p>
+        <label for="fecha" class="block mt-2">Fecha:</label>
+        <input type="date" id="fecha" class="w-full border border-gray-300 rounded-md p-2 mt-1" name="contacto[fecha]" required>
+        <label for="hora" class="block mt-2">Hora:</label>
+        <input type="time"id="hora" class="w-full border border-gray-300 rounded-md p-2 mt-1" name="contacto[hora]" required >
+        `;
+    }else{
+        contactoDiv.innerHTML=`
+        <label for="email" class="block mt-2">Por favor escriba su email:</label>
+        <input type="email" id="email" class="w-full border border-gray-300 rounded-md p-2 mt-1" name="contacto[email]">
+        `;
+       
+    }
+    
+}
 //menu
 function OnToggleMenu(e){
     if (e.target.name === 'menu-outline'){

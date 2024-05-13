@@ -67,7 +67,6 @@ class CursosController{
         ]);
     }
     public static function actualizar(Router $router){
-        
         $errores=Curso::getErrores();
         $id=validadOredireccionar('/admin');
         $curso=Curso::find($id);

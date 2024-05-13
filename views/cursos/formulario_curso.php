@@ -1,22 +1,22 @@
 
 <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" name="curso[nombre]" type="text" placeholder="Ingrese nombre" value="<?php echo $curso->nombre; ?>">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" name="curso[nombre]" type="text" placeholder="Ingrese nombre" value="<?php echo s($curso->nombre); ?>">
     </div>
 
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">Descripción:</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" name="curso[descripcion]" placeholder="Ingrese descripción" ><?php echo $curso->descripcion;?></textarea>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" name="curso[descripcion]" placeholder="Ingrese descripción" ><?php echo s($curso->descripcion);?></textarea>
     </div>
 
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="hora_inicio">Hora inicio</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="hora_inicio" name="curso[hora_inicio]" type="time"  value="<?php echo $curso->hora_inicio;?>">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="hora_inicio" name="curso[hora_inicio]" type="time"  value="<?php echo s($curso->hora_inicio);?>">
     </div>
 
     <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="hora_fin">Hora final</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="hora_fin" name="curso[hora_fin]" type="time"  value="<?php echo $curso->hora_fin;?>">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="hora_fin" name="curso[hora_fin]" type="time"  value="<?php echo s($curso->hora_fin);?>">
     </div>
     <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="imagen">imagen</label>

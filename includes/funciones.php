@@ -38,5 +38,9 @@ function validadOredireccionar(string $url){
     return $id;
 
 }
+function s($html):string{
+    $s=htmlspecialchars($html);
+    return $s;
+}
 
 ?>

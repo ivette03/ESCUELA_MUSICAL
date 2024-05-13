@@ -1,16 +1,16 @@
 
 <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="nombres">Nombres:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" name="profesor[nombre]" type="text" placeholder="Ingrese nombres" value="<?php echo $profesor->nombre; ?>">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" name="profesor[nombre]" type="text" placeholder="Ingrese nombres" value="<?php echo s($profesor->nombre); ?>">
     </div>
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="apellidos">Apellidos:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apellido" name="profesor[apellido]" placeholder="Ingrese apellidos" value="<?php echo $profesor->apellido; ?>" >
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apellido" name="profesor[apellido]" placeholder="Ingrese apellidos" value="<?php echo s($profesor->apellido); ?>" >
     </div>
  
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">Descripción:</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" name="profesor[descripcion]" placeholder="Ingrese descripción"><?php echo $profesor->descripcion; ?></textarea>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" name="profesor[descripcion]" placeholder="Ingrese descripción"><?php echo s($profesor->descripcion); ?></textarea>
     </div>
 
     </div>

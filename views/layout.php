@@ -42,7 +42,7 @@
         <a class="pb-2 hover:text-gray-800 cursor-pointer " href="/">Inicio</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/cursos">Cursos</a>
-        <a class="pb-2 hover:text-gray-800 cursor-pointer">Contactanos</a>
+        <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/contactanos" >Contactanos</a>
         
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Cerrar Sesión</a>
       </nav>
@@ -70,7 +70,7 @@
         <a class="pb-2 hover:text-gray-700 cursor-pointer" href="/">Inicio</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
         <a class="pb-2 hover:text-gray-700 cursor-pointer"  href="/cursos">Cursos</a>
-        <a class="pb-2 hover:text-gray-700 cursor-pointer">Contactanos</a>
+        <a class="pb-2 hover:text-gray-700 cursor-pointer" href="/contactanos">Contactanos</a>
     </nav>
 </footer>
 

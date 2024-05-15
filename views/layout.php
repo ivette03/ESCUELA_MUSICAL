@@ -1,4 +1,13 @@
-<?php $inicio = isset($inicio) ? $inicio : false;?>
+<?php 
+if(!isset($_SESSION)){
+   session_start();
+   $auth=$_SESSION['login'] ?? false;
+   if(!isset($inicio)){
+    $inicio=false;
+   }
+}
+
+?>
 
 <!doctype html>
 <html>
@@ -43,8 +52,13 @@
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/cursos">Cursos</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/contactanos" >Contactanos</a>
+        <?php if($auth):?>
+          <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/logout" >Cerrar sesión</a>
         
-        <a class="pb-2 hover:text-gray-800 cursor-pointer">Cerrar Sesión</a>
+        
+        <?php endif; ?>
+        
+
       </nav>
     </div>
     <!--Slogan-->

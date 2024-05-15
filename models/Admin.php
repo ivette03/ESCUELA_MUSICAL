@@ -28,7 +28,25 @@ class Admin extends ActiveRecord{
             self::$errores[]="El usuario no existe";
             return;
         }
+        return $resultado;
        
+    }
+    public function comprobarPassword($resultado){
+        $usuario=$resultado->fetch_object();
+        $autenticado=password_verify($this->password, $usuario->password);
+        if(!$autenticado){
+            self::$errores[]="El password es incorrecto";
+            
+        }
+        return $autenticado;
+
+    }
+    public function autenticar(){
+        session_start();
+        $_SESSION['usuario']=$this->email;
+        $_SESSION['login']=true;
+        header('Location: /admin');
+
     }
 
 }

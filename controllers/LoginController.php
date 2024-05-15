@@ -16,23 +16,30 @@ class LoginController{
                     $errores=Admin::getErrores();
                 }else{
                     //verificar el password
+                    $autenticado=$auth->comprobarPassword($resultado);
+                    if($autenticado){
+                        $auth->autenticar();
+
+                    }else{
+                        $errores=Admin::getErrores();
+                    }
+                    
                 }
             }
            
         }
 
         $router->render('auth/login',[
-            'errores'=>$errores,
-            'auth'=>$auth
+            'errores'=>$errores
+            
 
         ]);
     }
     public static function logout(Router $router){
 
-        $router->render('auth/login',[
-          
-
-        ]);
+       session_start();
+       $_SESSION=[];
+       header('Location: /');
     }
 
 }

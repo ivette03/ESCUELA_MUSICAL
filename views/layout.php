@@ -1,13 +1,3 @@
-<?php 
-if(!isset($_SESSION)){
-   session_start();
-   $auth=$_SESSION['login'] ?? false;
-   if(!isset($inicio)){
-    $inicio=false;
-   }
-}
-
-?>
 
 <!doctype html>
 <html>
@@ -52,24 +42,25 @@ if(!isset($_SESSION)){
         <a class="pb-2 hover:text-gray-800 cursor-pointer">Blog</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/cursos">Cursos</a>
         <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/contactanos" >Contactanos</a>
-        <?php if($auth):?>
+        
+        <?php if($_SESSION['login'] ?? null){?>
           <a class="pb-2 hover:text-gray-800 cursor-pointer" href="/logout" >Cerrar sesión</a>
         
         
-        <?php endif; ?>
+        <?php } ?>
         
 
       </nav>
     </div>
     <!--Slogan-->
-    <?php if($inicio):?>
+    <?php if($inicio ?? null):?>
       <div class="flex justify-center items-center py-[30px] align-center">
       <h1 id="slogan" class="xl:text-4xl p-5 text-gray-100 font-semibold text-center" style="font-family:Roboto Condensed, sans-serif; font-size:3rem;">¡Descubre tu pasión por la música con nuestra
         academia!</h1>
     </div>
     <?php endif;?>
     <!--imagen-->
-    <?php if ($inicio): ?>
+    <?php if ($inicio ?? null): ?>
     <div class="flex items-center justify-center lg:max-w-full h-auto">
       <img src="../assets/img/header.jpg" style="max-width: 40rem; height: auto;" loading="lazy">
     </div>

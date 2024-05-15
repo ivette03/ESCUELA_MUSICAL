@@ -10,7 +10,15 @@ class Router{
     $this->rutasPost[$url]=$fn;
    }
    public function comprobarRutas(){
+    session_start();
+    $auth=$_SESSION['login'] ?? null;
     $urlActual=$_SERVER['PATH_INFO'] ?? '/';
+    $rutasProtegidas=['/admin','/cursos/crear','/cursos/actualizar','/cursos/eliminar','/profesor/crear','/profesor/actualizar','/profesor/eliminar'];
+    if(in_array($urlActual, $rutasProtegidas) && !$auth){
+      header('Location: /');
+
+    }
+   
     $metodo=$_SERVER['REQUEST_METHOD'];
     if($metodo === 'GET'){
         $fn=$this->rutasGet[$urlActual] ?? null;
@@ -20,6 +28,7 @@ class Router{
     if ($fn){
         call_user_func($fn,$this);
     }
+    
    }
 
    //muestra una vista

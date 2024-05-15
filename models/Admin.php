@@ -33,12 +33,12 @@ class Admin extends ActiveRecord{
     }
     public function comprobarPassword($resultado){
         $usuario=$resultado->fetch_object();
-        $autenticado=password_verify($this->password, $usuario->password);
-        if(!$autenticado){
+        $auth=password_verify($this->password, $usuario->password);
+        if(!$auth){
             self::$errores[]="El password es incorrecto";
             
         }
-        return $autenticado;
+        return $auth;
 
     }
     public function autenticar(){

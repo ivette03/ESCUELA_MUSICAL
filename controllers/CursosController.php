@@ -3,18 +3,19 @@ namespace Controllers;
 use MVC\Router;
 use Model\Curso;
 use Model\Profesor;
-
+use Model\Blog;
 class CursosController{
     public static function index(Router $router){
         $cursos=Curso::all();
         $profesores=Profesor::all();
+        $blogs=Blog::all();
         $resultado=null;
         $resultado=$_GET['resultado'] ?? '';
         $router->render('cursos/admin',[
             'cursos'=>$cursos,
             'resultado'=>$resultado,
             'profesores'=>$profesores,
-
+            'blogs'=>$blogs
         ]);
     }
     public static function eliminar(Router $router){

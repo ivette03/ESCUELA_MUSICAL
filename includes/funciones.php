@@ -18,7 +18,7 @@ function mostrarNotificacion($codigo){
     return $mensaje;
 }
 function tipoContenido($tipo){
-    $tipos=['curso','profesor'];
+    $tipos=['curso','profesor','blog'];
     return in_array($tipo,$tipos);
 
 }

@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\Blog;
 use Model\Curso;
 use Model\Profesor;
 use MVC\Router;
@@ -88,6 +89,19 @@ class PaginasController
         $router->render('paginas/cursos', [
             'cursos' => $cursos
 
+        ]);
+    }
+    public static function blog(Router $router){
+        $blogs=Blog::all();
+        $router->render('paginas/blog',[
+            'blogs'=>$blogs
+        ]);
+    }
+    public static function blog_completo(Router $router){
+        $id=validadOredireccionar('/admin');
+        $blog=Blog::find($id);
+        $router->render('paginas/blog_completo',[
+            'blog'=>$blog
         ]);
     }
 }

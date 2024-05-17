@@ -9,9 +9,7 @@ class Curso extends ActiveRecord{
     public $hora_inicio;
     public $hora_fin;
     public $imagen;
-   
 
-    
     public function __construct($args=[]){
         $this->id=$args['id'] ?? null;
         $this->nombre=$args['nombre'] ?? '';
@@ -37,7 +35,6 @@ class Curso extends ActiveRecord{
         if(!$this->imagen) {
             self::$errores[]='La imagen es obligatoria';
         }
-        
         return self::$errores;
     }
 }

@@ -12,6 +12,8 @@
     <div class="flex justify-center align-center mb-5">
         <a class="bg-cyan-600 rounded-sm p-2 text-white m-5" href="/cursos/crear">Nuevo curso</a>
         <a class="bg-cyan-600 rounded-sm p-2 text-white m-5" href="/profesor/crear">Nuevo profesor</a>
+        <a class="bg-cyan-600 rounded-sm p-2 text-white m-5" href="/blog/crear">Nuevo blog</a>
+        
     </div>
     <div class="relative overflow-x-auto sm:rounded-lg md:px-28">
         <table class="w-full text-sm text-justify rtl:text-right text-gray-500 dark:text-gray-400">
@@ -143,6 +145,72 @@
             </tbody>
         </table>
     </div>
+
+
+
+
+    
+  <!--tabla blog-->
+  <h2 class="text-center m-5 text-cyan-600 font-bold text-2xl">Blogs</h2>
+    <div class="relative overflow-x-auto sm:rounded-lg md:px-28">
+        <table class="w-full text-sm text-justify rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                <tr class="bg-cyan-600">
+                    <th scope="col" class="px-6 py-3">
+                        Id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        imagen
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Titulo
+                    </th>
+                    
+                    <th scope="col" class="px-6 py-3">
+                        Contenido
+                    </th>
+                    
+                    <th scope="col" class="px-6 py-3">
+                        Opciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($blogs as $blog) : ?>
+                    <tr class="border-b border-gray-200 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                            <?php echo $blog->id; ?>
+                        </th>
+                        <td class="px-2 py-2">
+                            <img src="../../imagenes/<?php echo $blog->imagen; ?>" width="100px" height="auto"  loading="lazy">
+                        </td>
+                        <td class="px-2 py-2">
+                            <?php echo $blog->titulo; ?>
+
+                        </td>
+                       
+                        <td class="px-2 py-2">
+                            <?php echo $blog->contenido; ?>
+                        </td>
+                        
+                        
+                        <td class="px-2 py-2 flex">
+                            <div class="space-y-2">
+                                <form action="/blog/eliminar" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $blog->id; ?>">
+                                    <input type="hidden" name="tipo" value="blog">
+                                    <input type="submit" class="bg-red-600 rounded-sm text-white text-center p-2 cursor-pointer w-full" value="Eliminar">
+                                </form>
+                               <a href="/blog/actualizar?id=<?php echo $blog->id;?>" class="bg-cyan-600 text-white p-2">Actualizar</a>
+                            </div>
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
 
 
 </main>

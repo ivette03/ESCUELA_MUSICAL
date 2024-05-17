@@ -10,7 +10,7 @@
       <div class="bg-gray-200 p-8">
         <p class="text-center"><?php echo $curso->descripcion; ?></p>
         <div class="flex justify-center m-5">
-          <button class="p-5 text-cyan-600 font-semibold rounded-xl border-4 border-cyan-500 hover:bg-cyan-500 hover:text-white text-xl">Tomar curso</button>
+          <a href="/contactanos" class="p-5 text-cyan-600 font-semibold rounded-xl border-4 border-cyan-500 hover:bg-cyan-500 hover:text-white text-xl">Tomar curso</a>
         </div>
       </div>
     </div>

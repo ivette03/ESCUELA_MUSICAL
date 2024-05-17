@@ -8,9 +8,7 @@
       <img src="../../imagenes/<?php echo $profesor->imagen;?>" width="300px" class="mx-auto" loading="lazy">
       <div class="bg-gray-200 p-8">
         <p class="text-center"><?php echo $profesor->descripcion; ?></p>
-        <div class="flex justify-center m-5">
-          <button class="p-5 text-cyan-600 font-semibold rounded-xl border-4 border-cyan-500 hover:bg-cyan-500 hover:text-white text-xl">Tomar curso</button>
-        </div>
+        
       </div>
     </div>
     <?php }?>
